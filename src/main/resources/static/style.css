@@ -1,0 +1,13 @@
+@charset "UTF-8";
+h1 {
+	text-align:center;
+}
+
+div.center {
+	position:absolute;
+	margin-top:10%;
+	margin-left:20%;
+	width:800px;
+	border:2px solid brown;
+	padding:10px;
+}
