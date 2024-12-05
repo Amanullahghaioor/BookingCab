@@ -1,11 +1,12 @@
 package com.example.templateBookingCabMS.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+@JsonIgnoreProperties
 @Entity
 public class Cab {
 	

@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,18 +23,18 @@ import com.example.templateBookingCabMS.config.FeignService;
 import com.example.templateBookingCabMS.model.Cab;
 import com.example.templateBookingCabMS.service.CabService;
 
-//@Configuration
-//CrossOrigin
 @RestController
-@RequestMapping("/bookcab")
+@Configuration
+@RequestMapping(path = "/bookcab")
+@CrossOrigin(origins="http://localhost:8082")
 public class BookCabController {
 
 	// fields (Autowired fields)
 	@Autowired
 	private RestTemplate restTemplate;
 
-	// @Value("${app.greeting}")
-	// private String Greeting;
+	@Value("${app.greeting}")
+	private String Greeting;
 
 	@Autowired
 	private FeignService feignService;
